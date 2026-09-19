@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claude Code Mastery</title>
+    <meta
+      name="description"
+      content="A practical website for learning Claude Code, agent workflows, verification, permissions, and project memory."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <div class="brand">
+          <span class="brand-mark">CC</span>
+          <span>Claude Code Mastery</span>
+        </div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#quick-start">Quick Start</a>
+          <a href="#cheatsheet">Cheat Sheet</a>
+          <a href="#modules">Modules</a>
+          <a href="#prompts">Prompt Library</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">Agentic coding knowledge base</p>
+            <h1>Build with Claude Code without losing control.</h1>
+            <p class="hero-copy">
+              Learn the practical workflow for writing prompts, reading diffs,
+              protecting context, running checks, and shipping code with confidence.
+            </p>
+            <div class="cta-row">
+              <a class="button primary" href="#cheatsheet">Open cheat sheet</a>
+              <a class="button secondary" href="#modules">View modules</a>
+            </div>
+            <ul class="hero-pills" aria-label="Key principles">
+              <li>Context is the constraint</li>
+              <li>Verification is the loop</li>
+              <li>Hooks enforce guarantees</li>
+            </ul>
+          </div>
+
+          <aside class="panel spotlight" aria-label="Core ideas">
+            <h2>Core idea</h2>
+            <p>
+              The agent stops when the work looks done. A real check makes “looks
+              done” and “is done” the same thing.
+            </p>
+            <div class="mini-list">
+              <div>
+                <strong>1.</strong>
+                <span>Describe the outcome</span>
+              </div>
+              <div>
+                <strong>2.</strong>
+                <span>Limit the scope</span>
+              </div>
+              <div>
+                <strong>3.</strong>
+                <span>Run verification</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="stats">
+        <div class="container stats-grid">
+          <div class="stat">
+            <strong>6</strong>
+            <span>Permission modes</span>
+          </div>
+          <div class="stat">
+            <strong>4</strong>
+            <span>Workflow phases</span>
+          </div>
+          <div class="stat">
+            <strong>12</strong>
+            <span>Core modules</span>
+          </div>
+          <div class="stat">
+            <strong>∞</strong>
+            <span>Ways to improve it</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="quick-start" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Quick start</p>
+            <h2>Start effectively in one session</h2>
+          </div>
+
+          <div class="grid three">
+            <article class="card">
+              <h3>Install</h3>
+              <pre><code>curl -fsSL https://claude.ai/install.sh | bash</code></pre>
+            </article>
+            <article class="card">
+              <h3>Start a project</h3>
+              <pre><code>cd claude-practice
+claude</code></pre>
+            </article>
+            <article class="card">
+              <h3>Ask for verification</h3>
+              <pre><code>write a failing test that reproduces it, then fix it</code></pre>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="cheatsheet" class="section dark-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Shell and workflow</p>
+            <h2>Single-page cheat sheet</h2>
+          </div>
+
+          <div class="two-col">
+            <div class="panel">
+              <h3>Shell commands</h3>
+              <table>
+                <tbody>
+                  <tr><th>claude</th><td>Start interactive session</td></tr>
+                  <tr><th>claude "prompt"</th><td>Start with an opening prompt</td></tr>
+                  <tr><th>claude -p "prompt"</th><td>One-off query, print, exit</td></tr>
+                  <tr><th>claude -c</th><td>Continue most recent conversation</td></tr>
+                  <tr><th>claude -r</th><td>Pick a conversation to resume</td></tr>
+                  <tr><th>claude --permission-mode plan</th><td>Start in plan mode</td></tr>
+                  <tr><th>claude --permission-mode auto</th><td>Start in auto mode</td></tr>
+                  <tr><th>claude --agent &lt;name&gt;</th><td>Run a session as a subagent</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="panel">
+              <h3>Daily commands</h3>
+              <table>
+                <tbody>
+                  <tr><th>/clear</th><td>Wipe conversation between tasks</td></tr>
+                  <tr><th>/context</th><td>Show what's filling the window</td></tr>
+                  <tr><th>/compact &lt;instructions&gt;</th><td>Summarize and continue</td></tr>
+                  <tr><th>/rewind</th><td>Restore code or conversation</td></tr>
+                  <tr><th>/diff</th><td>Review working tree changes</td></tr>
+                  <tr><th>/code-review</th><td>Adversarial review in a fresh subagent</td></tr>
+                  <tr><th>/verify</th><td>Build and run the app to confirm it works</td></tr>
+                  <tr><th>/help</th><td>Everything your version supports</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="two-col mt-4">
+            <div class="panel">
+              <h3>Keyboard</h3>
+              <table>
+                <tbody>
+                  <tr><th>Esc</th><td>Stop mid-action, keep context</td></tr>
+                  <tr><th>Esc Esc</th><td>Rewind menu</td></tr>
+                  <tr><th>Shift+Tab</th><td>Cycle permission modes</td></tr>
+                  <tr><th>Ctrl+G</th><td>Open the plan in your editor</td></tr>
+                  <tr><th>↑</th><td>Previous prompt</td></tr>
+                  <tr><th>/</th><td>Command menu</td></tr>
+                  <tr><th>@</th><td>Reference a file</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="panel">
+              <h3>Permission modes</h3>
+              <table>
+                <tbody>
+                  <tr><th>Manual</th><td>Reads only</td></tr>
+                  <tr><th>acceptEdits</th><td>Edits and common filesystem commands</td></tr>
+                  <tr><th>plan</th><td>Reads, no changes until approved</td></tr>
+                  <tr><th>auto</th><td>Everything with classifier review</td></tr>
+                  <tr><th>dontAsk</th><td>Reads + pre-approved tools only</td></tr>
+                  <tr><th>bypassPermissions</th><td>Everything — containers only</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="modules" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Learning path</p>
+            <h2>Modules that matter most</h2>
+          </div>
+
+          <div class="module-grid">
+            <article class="module-card">
+              <span class="module-number">00</span>
+              <h3>Start Here</h3>
+              <p>Set up a practice repo and understand the three jobs: specify, constrain, verify.</p>
+            </article>
+            <article class="module-card">
+              <span class="module-number">03</span>
+              <h3>Prompting an Agent</h3>
+              <p>Prompt with clear scope, symptom, verification, and non-goals.</p>
+            </article>
+            <article class="module-card">
+              <span class="module-number">04</span>
+              <h3>Context Window</h3>
+              <p>Protect context to avoid degraded reasoning and noisy sessions.</p>
+            </article>
+            <article class="module-card">
+              <span class="module-number">05</span>
+              <h3>Permissions &amp; Safety</h3>
+              <p>Pick the right mode and deny rules before the agent can touch secrets.</p>
+            </article>
+            <article class="module-card">
+              <span class="module-number">06</span>
+              <h3>Core Workflow</h3>
+              <p>Explore → plan → code → verify. Add a runnable check to close the loop.</p>
+            </article>
+            <article class="module-card">
+              <span class="module-number">07</span>
+              <h3>Git &amp; Shipping</h3>
+              <p>Commit before and after, read diffs, use GitHub and CI wisely.</p>
+            </article>
+            <article class="module-card">
+              <span class="module-number">08</span>
+              <h3>Project Memory</h3>
+              <p>Keep CLAUDE.md short, rules scoped, and auto memory intentional.</p>
+            </article>
+            <article class="module-card">
+              <span class="module-number">09</span>
+              <h3>Extending Claude Code</h3>
+              <p>Use skills, subagents, hooks, and MCP integrations to amplify your setup.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="prompts" class="section dark-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Prompt patterns</p>
+            <h2>Useful prompts you can reuse</h2>
+          </div>
+
+          <div class="prompt-list">
+            <article class="prompt-item">
+              <h3>Bug fix</h3>
+              <p>"[symptom]. Check [location]. Write a failing test that reproduces it, then fix the root cause. Don't suppress the error. Show me the test output."</p>
+            </article>
+            <article class="prompt-item">
+              <h3>Feature work</h3>
+              <p>"Implement [feature]. Follow the pattern in @[example-file]. Don't add libraries that aren't already in the project. Write tests for [cases], run them, and fix failures."</p>
+            </article>
+            <article class="prompt-item">
+              <h3>Investigation</h3>
+              <p>"Use subagents to investigate [question]. Start in [directory]. Report a summary, not file contents."</p>
+            </article>
+            <article class="prompt-item">
+              <h3>Review</h3>
+              <p>"Use a subagent to review [the diff] against [PLAN.md / the requirements]. Flag only gaps affecting correctness or the stated requirements. Ignore style preferences."</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-row">
+        <div>Claude Code Mastery</div>
+        <div>Built for practical agent workflows</div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
